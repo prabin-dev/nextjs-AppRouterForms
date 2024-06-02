@@ -51,6 +51,7 @@ export const RegistrationForm = ({
       first: "",
       last: "",
       email: "",
+      zipCode: "",
     },
   });
 
@@ -153,6 +154,20 @@ export const RegistrationForm = ({
                   <Input placeholder="" {...field} />
                 </FormControl>
                 <FormDescription>Your last name.</FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="zipCode"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel htmlFor="email">Zip Code</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+                <FormDescription>Your zipcode.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}

@@ -31,8 +31,9 @@ const Home = () => {
   ) => {
     "use server";
     const data = Object.fromEntries(formData);
-    const parsed = registrationSchema.safeParse(data);
+    const parsed = await registrationSchema.safeParseAsync(data);
     if (parsed.success) {
+      console.log(parsed.data);
       return {
         message: "User registered successfully",
         user: parsed.data,
